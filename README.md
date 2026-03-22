@@ -2,26 +2,26 @@
 
 [](https://opensource.org/licenses/MIT)
 
-[cite_start]This repository contains the official implementation of **TEMPO**, a visit-updated multimodal deep learning model designed for dynamic prognostication in patients with lung adenocarcinoma and leptomeningeal metastasis (LM)[cite: 53, 54, 125].
+This repository contains the official implementation of **TEMPO**, a visit-updated multimodal deep learning model designed for dynamic prognostication in patients with lung adenocarcinoma and leptomeningeal metastasis (LM).
 
 ## 📖 Overview
 
-[cite_start]Leptomeningeal metastasis from lung adenocarcinoma exhibits rapid progression and clinical heterogeneity[cite: 18]. [cite_start]Routine follow-up data are inherently irregular, and multimodal data are frequently incomplete[cite: 19].
+Leptomeningeal metastasis from lung adenocarcinoma exhibits rapid progression and clinical heterogeneity[cite: 18]. [cite_start]Routine follow-up data are inherently irregular, and multimodal data are frequently incomplete.
 
-[cite_start]**TEMPO** addresses this by leveraging routinely collected longitudinal assessments without imputing absent modalities[cite: 21]. [cite_start]Instead, it uses modality masks, missingness indicators, and prespecified temporal-gap features to represent data availability[cite: 22]. The model jointly estimates two key clinical outcomes at each routine assessment:
+**TEMPO** addresses this by leveraging routinely collected longitudinal assessments without imputing absent modalities[cite: 21]. [cite_start]Instead, it uses modality masks, missingness indicators, and prespecified temporal-gap features to represent data availability[cite: 22]. The model jointly estimates two key clinical outcomes at each routine assessment:
 
-  * [cite_start]**Short-term risk:** 8-week central nervous system (CNS) progression[cite: 158].
-  * [cite_start]**Medium-term prognosis:** 6-month all-cause mortality[cite: 158].
+  * **Short-term risk:** 8-week central nervous system (CNS) progression.
+  * **Medium-term prognosis:** 6-month all-cause mortality.
 
-[cite_start]In our temporal validation cohort, TEMPO demonstrated moderate discrimination for 6-month mortality (C-index, 0.69; 95% CI, 0.64-0.74) and 8-week CNS progression (time-dependent AUC, 0.70; 95% CI, 0.61-0.80)[cite: 88].
+In our temporal validation cohort, TEMPO demonstrated moderate discrimination for 6-month mortality (C-index, 0.69; 95% CI, 0.64-0.74) and 8-week CNS progression (time-dependent AUC, 0.70; 95% CI, 0.61-0.80).
 
 ## 🧠 Model Architecture
 
 TEMPO integrates data across multiple clinical modalities:
 
-  * [cite_start]**Clinical Data Branch:** Processes structured clinical baselines and longitudinal dynamics with time-positional encoding[cite: 430, 431, 437].
-  * [cite_start]**Image Branch:** Utilizes a `ResNet18` backbone (pretrained on MRI) to extract features from brain MRI slices and cerebrospinal fluid (CSF) cytology/pathology images[cite: 438, 449, 453, 461].
-  * [cite_start]**Fusion & Prediction:** Combines the embeddings and outputs the paired risk estimates via separate prediction heads[cite: 470, 484, 503].
+  * **Clinical Data Branch:** Processes structured clinical baselines and longitudinal dynamics with time-positional encoding.
+  * **Image Branch:** Utilizes a `ResNet18` backbone (pretrained on MRI) to extract features from brain MRI slices and cerebrospinal fluid (CSF) cytology/pathology images.
+  * **Fusion & Prediction:** Combines the embeddings and outputs the paired risk estimates via separate prediction heads.
 
 
 ## 📝 Citation
