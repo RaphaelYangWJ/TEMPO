@@ -35,5 +35,3 @@ If you find this code or our work useful in your research, please consider citin
   year={2026}
 }
 ```
-
-既然你之前的代码包没有成功上传，你需要我为你提供一个标准的项目目录结构建议，或者帮你编写像 `requirements.txt` 或 `train.py` 这样的代码骨架吗？
